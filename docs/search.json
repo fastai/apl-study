@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "posts/post-with-code/APL.html",
+    "href": "posts/post-with-code/APL.html",
+    "title": "APL",
+    "section": "",
+    "text": "1\n\n1\n\n\n\n\n¯1\n\n¯1\n\n\n\n\n1.5\n\n1.5\n\n\n\n\n\n\n\n0j4\n\n0J4\n\n\n\n\n¯5j¯6\n\n¯5J¯6"
+  },
+  {
+    "objectID": "posts/post-with-code/APL.html#rank-1-arrays",
+    "href": "posts/post-with-code/APL.html#rank-1-arrays",
+    "title": "APL",
+    "section": "Rank-1 arrays",
+    "text": "Rank-1 arrays\n\n2 3 1\n\n2 3 1\n\n\n\n\n2 ¯3 1\n\n2 ¯3 1\n\n\n\n\n0j4 ¯5j¯6\n\n0J4 ¯5J¯6"
+  },
+  {
+    "objectID": "posts/post-with-code/APL.html#minus-sign-bar",
+    "href": "posts/post-with-code/APL.html#minus-sign-bar",
+    "title": "APL",
+    "section": "- (Minus sign; Bar)",
+    "text": "- (Minus sign; Bar)\n\nMonadic - (Negate)\n\n- 4\n\n¯4\n\n\n\n\n- ¯4\n\n4\n\n\n\n\n- 4 2 0 ¯3 ¯5\n\n¯4 ¯2 0 3 5\n\n\n\n\n¯4 2 0 ¯3 ¯5\n\n¯4 2 0 ¯3 ¯5\n\n\n\n\n\nDyadic - (Minus; subtract)\n\n3-2\n\n1\n\n\n\n\n3 2 1 - 4 5 1\n\n¯1 ¯3 0\n\n\n\n\n3 2 1 - 1\n\n2 1 0\n\n\n\n\n1 - 3 2 1\n\n¯2 ¯1 0"
+  },
+  {
+    "objectID": "posts/post-with-code/APL.html#plus-sign",
+    "href": "posts/post-with-code/APL.html#plus-sign",
+    "title": "APL",
+    "section": "+ (Plus sign)",
+    "text": "+ (Plus sign)\n\nMonadic + (Conjugate)\n\n+ 1.2\n\n1.2\n\n\n\n\n+ ¯5j¯6\n\n¯5J6\n\n\n\n\n+ 1.2 0j4 ¯5j¯6\n\n1.2 0J¯4 ¯5J6"
+  },
+  {
+    "objectID": "posts/post-with-code/APL.html#plus-sign-1",
+    "href": "posts/post-with-code/APL.html#plus-sign-1",
+    "title": "APL",
+    "section": "+ (Plus sign)",
+    "text": "+ (Plus sign)\n\nMonadic + (Conjugate)\n\n+ 1.2 0j4 ¯5j¯6\n\n1.2 0J¯4 ¯5J6\n\n\n\n\n\nDyadic + (Plus)\n\n3+2\n\n5\n\n\n\n\n3 2 1 + 4 5 1\n\n7 7 2\n\n\n\n\n3 2 1 + 1\n\n4 3 2\n\n\n\n\n1 + 3 2 1\n\n4 3 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This blog is a work in progress to document and share learning that the Fastai APL Study Group has as they learn Dyalog APL. If you are interested, join us!\nCheck out the forum for meeting time and resources."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "apl",
+    "section": "",
+    "text": "Dyalog\n\n\nAPL\n\n\nGlyphs\n\n\n\n\n\n\n\n\n\n\n\nJul 5, 2022\n\n\nFastai APL Study Group\n\n\n\n\n\n\nNo matching items"
+  }
+]
