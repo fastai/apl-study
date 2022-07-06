@@ -14,5 +14,4 @@ format:
   html:
     css: styles.css
     toc: true
-    monofont: SAX2
     monobackgroundcolor: '#FAFAFA'
