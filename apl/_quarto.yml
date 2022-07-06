@@ -12,6 +12,6 @@ website:
         href: https://twitter.com/fastdotai/
 format:
   html:
-    theme: cerulean
     css: styles.css
-    mainfont: SAX2
+    monofont: SAX2
+    monobackgroundcolor: '#FAFAFA'
