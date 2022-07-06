@@ -1,0 +1,10 @@
+/* css styles */
+@font-face {
+  font-family: aplfont;
+  src: url(https://github.com/abrudz/SAX2/raw/master/SAX2.ttf);
+}
+
+
+code {
+    font-family: aplfont;
+}

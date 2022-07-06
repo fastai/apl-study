@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: ../docs
+website:
+  title: "APL Study Group"
+  navbar:
+    right:
+      - about.ipynb
+      - icon: github
+        href: https://github.com/fastai/apl-study
+      - icon: twitter
+        href: https://twitter.com/fastdotai/
+format:
+  html:
+    css: styles.css
+    toc: true
+    monobackgroundcolor: '#FAFAFA'
