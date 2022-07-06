@@ -12,7 +12,6 @@ website:
         href: https://twitter.com/fastdotai/
 format:
   html:
-    theme: cosmo
+    theme: cerulean
     css: styles.css
     mainfont: SAX2
-

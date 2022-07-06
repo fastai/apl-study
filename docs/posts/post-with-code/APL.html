@@ -9,7 +9,7 @@
 <meta name="author" content="Fastai APL Study Group">
 <meta name="dcterms.date" content="2022-07-05">
 
-<title>APL Study Group - APL</title>
+<title>APL Study Group - Glyphs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,7 +100,7 @@ ul.task-list{list-style: none;}
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">APL</h1>
+      <h1 class="title">Glyphs</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Dyalog</div>
                 <div class="quarto-category">APL</div>
@@ -139,27 +139,30 @@ ul.task-list{list-style: none;}
 
 
 
+<section id="glyphs" class="level1">
+<h1>Glyphs</h1>
+<p>This post will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs. The purpose of this post is to create documentation for glyphs that are helpful for beginners getting started.</p>
 <section id="numbers" class="level2">
 <h2 class="anchored" data-anchor-id="numbers">Numbers</h2>
 <section id="real" class="level3">
 <h3 class="anchored" data-anchor-id="real">Real</h3>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="1">
 <pre class="apl cell-code"><code>1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <span style="white-space:pre; font-family: monospace">1
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="2">
 <pre class="apl cell-code"><code>¯1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <span style="white-space:pre; font-family: monospace">¯1
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="3">
 <pre class="apl cell-code"><code>1.5</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <span style="white-space:pre; font-family: monospace">1.5
 </span>
 </div>
@@ -167,177 +170,325 @@ ul.task-list{list-style: none;}
 </section>
 <section id="complex" class="level3">
 <h3 class="anchored" data-anchor-id="complex">Complex</h3>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="4">
 <pre class="apl cell-code"><code>0j4</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <span style="white-space:pre; font-family: monospace">0J4
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="5">
 <pre class="apl cell-code"><code>¯5j¯6</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <span style="white-space:pre; font-family: monospace">¯5J¯6
 </span>
 </div>
 </div>
 </section>
-</section>
-<section id="rank-1-arrays" class="level2">
-<h2 class="anchored" data-anchor-id="rank-1-arrays">Rank-1 arrays</h2>
-<div class="cell" data-execution_count="4">
+<section id="rank-1-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="rank-1-arrays">Rank-1 arrays</h3>
+<div class="cell" data-execution_count="6">
 <pre class="apl cell-code"><code>2 3 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <span style="white-space:pre; font-family: monospace">2 3 1
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="7">
 <pre class="apl cell-code"><code>2 ¯3 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <span style="white-space:pre; font-family: monospace">2 ¯3 1
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="8">
 <pre class="apl cell-code"><code>0j4 ¯5j¯6</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <span style="white-space:pre; font-family: monospace">0J4 ¯5J¯6
 </span>
 </div>
 </div>
 </section>
-<section id="minus-sign-bar" class="level2">
-<h2 class="anchored" data-anchor-id="minus-sign-bar"><code>-</code> (Minus sign; Bar)</h2>
-<section id="monadic---negate" class="level3">
-<h3 class="anchored" data-anchor-id="monadic---negate">Monadic <code>-</code> (Negate)</h3>
-<div class="cell" data-execution_count="10">
+</section>
+<section id="basic-math-operators" class="level2">
+<h2 class="anchored" data-anchor-id="basic-math-operators">Basic math operators</h2>
+<section id="minus-sign-bar" class="level3">
+<h3 class="anchored" data-anchor-id="minus-sign-bar"><code>-</code> (Minus sign; Bar)</h3>
+<section id="monadic---negate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic---negate">Monadic <code>-</code> (Negate)</h4>
+<div class="cell" data-execution_count="9">
 <pre class="apl cell-code"><code>- 4</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <span style="white-space:pre; font-family: monospace">¯4
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <pre class="apl cell-code"><code>- ¯4</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <span style="white-space:pre; font-family: monospace">4
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="11">
 <pre class="apl cell-code"><code>- 4 2 0 ¯3 ¯5</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <span style="white-space:pre; font-family: monospace">¯4 ¯2 0 3 5
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="12">
 <pre class="apl cell-code"><code>¯4 2 0 ¯3 ¯5</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <span style="white-space:pre; font-family: monospace">¯4 2 0 ¯3 ¯5
 </span>
 </div>
 </div>
 </section>
-<section id="dyadic---minus-subtract" class="level3">
-<h3 class="anchored" data-anchor-id="dyadic---minus-subtract">Dyadic <code>-</code> (Minus; subtract)</h3>
-<div class="cell" data-execution_count="15">
+<section id="dyadic---minus-subtract" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic---minus-subtract">Dyadic <code>-</code> (Minus; subtract)</h4>
+<div class="cell" data-execution_count="13">
 <pre class="apl cell-code"><code>3-2</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <span style="white-space:pre; font-family: monospace">1
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="14">
 <pre class="apl cell-code"><code>3 2 1 - 4 5 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <span style="white-space:pre; font-family: monospace">¯1 ¯3 0
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="15">
 <pre class="apl cell-code"><code>3 2 1 - 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <span style="white-space:pre; font-family: monospace">2 1 0
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="16">
 <pre class="apl cell-code"><code>1 - 3 2 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <span style="white-space:pre; font-family: monospace">¯2 ¯1 0
 </span>
 </div>
 </div>
 </section>
 </section>
-<section id="plus-sign" class="level2">
-<h2 class="anchored" data-anchor-id="plus-sign"><code>+</code> (Plus sign)</h2>
-<section id="monadic-conjugate" class="level3">
-<h3 class="anchored" data-anchor-id="monadic-conjugate">Monadic <code>+</code> (Conjugate)</h3>
-<div class="cell" data-execution_count="24">
+<section id="plus-sign" class="level3">
+<h3 class="anchored" data-anchor-id="plus-sign"><code>+</code> (Plus sign)</h3>
+<section id="monadic-conjugate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-conjugate">Monadic <code>+</code> (Conjugate)</h4>
+<div class="cell" data-execution_count="17">
 <pre class="apl cell-code"><code>+ 1.2</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <span style="white-space:pre; font-family: monospace">1.2
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="18">
 <pre class="apl cell-code"><code>+ ¯5j¯6</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <span style="white-space:pre; font-family: monospace">¯5J6
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
-<pre class="apl cell-code"><code>+ 1.2 0j4 ¯5j¯6</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="23">
-<span style="white-space:pre; font-family: monospace">1.2 0J¯4 ¯5J6
-</span>
-</div>
-</div>
-</section>
-</section>
-<section id="plus-sign-1" class="level2">
-<h2 class="anchored" data-anchor-id="plus-sign-1"><code>+</code> (Plus sign)</h2>
-<section id="monadic-conjugate-1" class="level3">
-<h3 class="anchored" data-anchor-id="monadic-conjugate-1">Monadic <code>+</code> (Conjugate)</h3>
-<div class="cell" data-execution_count="34">
-<pre class="apl cell-code"><code>+ 1.2 0j4 ¯5j¯6</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="34">
-<span style="white-space:pre; font-family: monospace">1.2 0J¯4 ¯5J6
-</span>
-</div>
-</div>
-</section>
-<section id="dyadic-plus" class="level3">
-<h3 class="anchored" data-anchor-id="dyadic-plus">Dyadic <code>+</code> (Plus)</h3>
 <div class="cell" data-execution_count="19">
-<pre class="apl cell-code"><code>3+2</code></pre>
+<pre class="apl cell-code"><code>+ 1.2 0j4 ¯5j¯6</code></pre>
 <div class="cell-output cell-output-display" data-execution_count="19">
+<span style="white-space:pre; font-family: monospace">1.2 0J¯4 ¯5J6
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-plus" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-plus">Dyadic <code>+</code> (Plus)</h4>
+<div class="cell" data-execution_count="21">
+<pre class="apl cell-code"><code>3+2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="21">
 <span style="white-space:pre; font-family: monospace">5
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="22">
 <pre class="apl cell-code"><code>3 2 1 + 4 5 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <span style="white-space:pre; font-family: monospace">7 7 2
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="23">
 <pre class="apl cell-code"><code>3 2 1 + 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <span style="white-space:pre; font-family: monospace">4 3 2
 </span>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="24">
 <pre class="apl cell-code"><code>1 + 3 2 1</code></pre>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <span style="white-space:pre; font-family: monospace">4 3 2
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="divide-sign" class="level3">
+<h3 class="anchored" data-anchor-id="divide-sign"><code>÷</code> (Divide sign)</h3>
+<section id="monadic-reciprocol" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-reciprocol">Monadic <code>÷</code> (Reciprocol)</h4>
+<div class="cell" data-execution_count="45">
+<pre class="apl cell-code"><code>÷ 3 ¯2 3j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<span style="white-space:pre; font-family: monospace">0.333333 ¯0.5 0.12J¯0.16
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-divided-by" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-divided-by">Dyadic <code>÷</code> (Divided by)</h4>
+<div class="cell" data-execution_count="40">
+<pre class="apl cell-code"><code>3÷2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<span style="white-space:pre; font-family: monospace">1.5
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="41">
+<pre class="apl cell-code"><code>3÷2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<span style="white-space:pre; font-family: monospace">1.5 1.2 ¯3
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="42">
+<pre class="apl cell-code"><code>3 2 1÷2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<span style="white-space:pre; font-family: monospace">1.5 0.8 ¯1
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="times-sign" class="level3">
+<h3 class="anchored" data-anchor-id="times-sign"><code>×</code> (Times sign)</h3>
+<section id="monadic-direction" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-direction">Monadic <code>×</code> (Direction)</h4>
+<div class="cell" data-execution_count="29">
+<pre class="apl cell-code"><code>× 3.1 ¯2 0 3j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<span style="white-space:pre; font-family: monospace">1 ¯1 0 0.6J0.8
+</span>
+</div>
+</div>
+<p><code>3j4</code> means <code>3+4i</code>, which has a magnitude of 5 (because (3×3)+(4×4)=(5×5)). <code>0.6j0.8</code> represents a vector in the same direction as <code>3j4</code>, but with a magnitude of 5, since it’s <code>3j4÷5</code>.</p>
+</section>
+<section id="dyadic-times" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-times">Dyadic <code>×</code> (Times)</h4>
+<div class="cell" data-execution_count="25">
+<pre class="apl cell-code"><code>3×2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<span style="white-space:pre; font-family: monospace">6
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<pre class="apl cell-code"><code>3×2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<span style="white-space:pre; font-family: monospace">6 7.5 ¯3
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="27">
+<pre class="apl cell-code"><code>3 2 1×2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<span style="white-space:pre; font-family: monospace">6 5 ¯1
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="star" class="level3">
+<h3 class="anchored" data-anchor-id="star"><code>*</code> (Star)</h3>
+<section id="monadic-exponential" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-exponential">Monadic <code>*</code> (Exponential)</h4>
+<div class="cell" data-execution_count="56">
+<pre class="apl cell-code"><code>* 0 1 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<span style="white-space:pre; font-family: monospace">1 2.71828 7.38906
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-power" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-power">Dyadic <code>*</code> (Power)</h4>
+<div class="cell" data-execution_count="57">
+<pre class="apl cell-code"><code>49 5 ¯4 * 0.5 2 0.5</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<span style="white-space:pre; font-family: monospace">7 25 0J2
+</span>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="precedence" class="level2">
+<h2 class="anchored" data-anchor-id="precedence">Precedence</h2>
+<div class="cell" data-execution_count="50">
+<pre class="apl cell-code"><code>3×2+1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace">9
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="54">
+<pre class="apl cell-code"><code>1 2 3×2+1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="54">
+<span style="white-space:pre; font-family: monospace">3 6 9
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="55">
+<pre class="apl cell-code"><code>1 2 3×2+2 4 6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<span style="white-space:pre; font-family: monospace">4 12 24
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="53">
+<pre class="apl cell-code"><code>3 ¯5 + 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<span style="white-space:pre; font-family: monospace">7 ¯1
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="47">
+<pre class="apl cell-code"><code>8*÷3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="47">
+<span style="white-space:pre; font-family: monospace">2
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<pre class="apl cell-code"><code>|3j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<span style="white-space:pre; font-family: monospace">5
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="39">
+<pre class="apl cell-code"><code>2j2÷(|2j2)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<span style="white-space:pre; font-family: monospace">0.707107J0.707107
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="38">
+<pre class="apl cell-code"><code>×2j2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<span style="white-space:pre; font-family: monospace">0.707107J0.707107
 </span>
 </div>
 </div>
