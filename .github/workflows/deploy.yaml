@@ -17,8 +17,7 @@ jobs:
         with:
           python-version: "3.10"
       - name: Install Dependencies
-        run: |
-          ./install_quarto.sh
+        run: ./install_quarto.sh
       - name: Build website
         run: quarto render
       - name: Deploy to GitHub Pages
