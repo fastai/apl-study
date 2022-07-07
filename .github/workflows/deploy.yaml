@@ -21,7 +21,7 @@ jobs:
         run: |
           ./install_quarto.sh
       - name: Build website
-        run: quarto render apl
+        run: quarto render
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
