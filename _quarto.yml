@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: ../docs
+  output-dir: docs
 website:
   title: "APL Study Group"
   navbar:
@@ -15,3 +15,4 @@ format:
     css: styles.css
     toc: true
     monobackgroundcolor: '#FAFAFA'
+

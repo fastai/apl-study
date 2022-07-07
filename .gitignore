@@ -1,3 +1,5 @@
+.quarto/
+.ipynb_checkpoints/
 docs/
 
 # Byte-compiled / optimized / DLL files
