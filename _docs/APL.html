@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.653">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jeremy Howard">
+<meta name="dcterms.date" content="2022-07-05">
+
+<title>apl_study - Glyphs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="apl_study - Glyphs">
+<meta property="og:description" content="This post will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs.">
+<meta property="og:image" content="image.jpg">
+<meta property="og:site-name" content="apl_study">
+<meta name="twitter:title" content="apl_study - Glyphs">
+<meta name="twitter:description" content="This post will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs.">
+<meta name="twitter:image" content="image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">apl_study</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Isaac-Flath/apl_study/tree/master/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Glyphs</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Project name here</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./core.html" class="sidebar-item-text sidebar-link">module name here</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./APL.html" class="sidebar-item-text sidebar-link active">Glyphs</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-objects" id="toc-basic-objects" class="nav-link active" data-scroll-target="#basic-objects">Basic objects</a>
+  <ul class="collapse">
+  <li><a href="#real" id="toc-real" class="nav-link" data-scroll-target="#real">Real</a></li>
+  <li><a href="#complex" id="toc-complex" class="nav-link" data-scroll-target="#complex">Complex</a></li>
+  <li><a href="#rank-1-arrays" id="toc-rank-1-arrays" class="nav-link" data-scroll-target="#rank-1-arrays">Rank-1 arrays</a></li>
+  </ul></li>
+  <li><a href="#basic-math-operators" id="toc-basic-math-operators" class="nav-link" data-scroll-target="#basic-math-operators">Basic math operators</a>
+  <ul class="collapse">
+  <li><a href="#minus-sign-bar" id="toc-minus-sign-bar" class="nav-link" data-scroll-target="#minus-sign-bar"><code>-</code> (Minus sign; Bar)</a></li>
+  <li><a href="#plus-sign" id="toc-plus-sign" class="nav-link" data-scroll-target="#plus-sign"><code>+</code> (Plus sign)</a></li>
+  <li><a href="#divide-sign" id="toc-divide-sign" class="nav-link" data-scroll-target="#divide-sign"><code>÷</code> (Divide sign)</a></li>
+  <li><a href="#times-sign" id="toc-times-sign" class="nav-link" data-scroll-target="#times-sign"><code>×</code> (Times sign)</a></li>
+  <li><a href="#star" id="toc-star" class="nav-link" data-scroll-target="#star"><code>*</code> (Star)</a></li>
+  </ul></li>
+  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions">Expressions</a>
+  <ul class="collapse">
+  <li><a href="#precedence" id="toc-precedence" class="nav-link" data-scroll-target="#precedence">Precedence</a></li>
+  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#destructuring-assignment" id="toc-destructuring-assignment" class="nav-link" data-scroll-target="#destructuring-assignment">Destructuring assignment</a></li>
+  </ul></li>
+  <li><a href="#array-rank" id="toc-array-rank" class="nav-link" data-scroll-target="#array-rank">Array rank</a>
+  <ul class="collapse">
+  <li><a href="#rho" id="toc-rho" class="nav-link" data-scroll-target="#rho"><code>⍴</code> (rho)</a></li>
+  </ul></li>
+  <li><a href="#strings-characters-and-character-vectors" id="toc-strings-characters-and-character-vectors" class="nav-link" data-scroll-target="#strings-characters-and-character-vectors">Strings (characters and character vectors)</a></li>
+  <li><a href="#iota" id="toc-iota" class="nav-link" data-scroll-target="#iota"><code>⍳</code> (iota)</a>
+  <ul class="collapse">
+  <li><a href="#monadic-index-generator" id="toc-monadic-index-generator" class="nav-link" data-scroll-target="#monadic-index-generator">monadic <code>⍳</code> (index generator)</a></li>
+  <li><a href="#dyadic-index-of" id="toc-dyadic-index-of" class="nav-link" data-scroll-target="#dyadic-index-of">dyadic <code>⍳</code> (index of)</a></li>
+  </ul></li>
+  <li><a href="#stuff-we-havent-done-yet" id="toc-stuff-we-havent-done-yet" class="nav-link" data-scroll-target="#stuff-we-havent-done-yet">Stuff we haven’t done yet…</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Isaac-Flath/apl_study/tree/master/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Glyphs</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Dyalog</div>
+    <div class="quarto-category">APL</div>
+    <div class="quarto-category">Glyphs</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jeremy Howard </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 5, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<p>This post will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs. The purpose of this post is to create documentation for glyphs that are helpful for beginners getting started.</p>
+<section id="basic-objects" class="level2">
+<h2 class="anchored" data-anchor-id="basic-objects">Basic objects</h2>
+<section id="real" class="level3">
+<h3 class="anchored" data-anchor-id="real">Real</h3>
+<div class="cell" data-execution_count="30">
+<pre class="apl cell-code"><code>1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<span style="white-space:pre; font-family: monospace"> 
+1
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<pre class="apl cell-code"><code>¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<span style="white-space:pre; font-family: monospace">  
+¯1
+  
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="32">
+<pre class="apl cell-code"><code>1.5</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<span style="white-space:pre; font-family: monospace">   
+1.5
+   
+</span>
+</div>
+</div>
+</section>
+<section id="complex" class="level3">
+<h3 class="anchored" data-anchor-id="complex">Complex</h3>
+<div class="cell" data-execution_count="33">
+<pre class="apl cell-code"><code>0j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<span style="white-space:pre; font-family: monospace">   
+0J4
+   
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<pre class="apl cell-code"><code>¯5j¯6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<span style="white-space:pre; font-family: monospace">     
+¯5J¯6
+     
+</span>
+</div>
+</div>
+</section>
+<section id="rank-1-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="rank-1-arrays">Rank-1 arrays</h3>
+<div class="cell" data-execution_count="35">
+<pre class="apl cell-code"><code>]Boxing on -style=max</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<span style="white-space:pre; font-family: monospace">┌→────────────────┐
+│Was ON -style=max│
+└─────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<pre class="apl cell-code"><code>2 3 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│2 3 1│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="37">
+<pre class="apl cell-code"><code>2 ¯3 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<span style="white-space:pre; font-family: monospace">┌→─────┐
+│2 ¯3 1│
+└~─────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="38">
+<pre class="apl cell-code"><code>0j4 ¯5j¯6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<span style="white-space:pre; font-family: monospace">┌→────────┐
+│0J4 ¯5J¯6│
+└~────────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="basic-math-operators" class="level2">
+<h2 class="anchored" data-anchor-id="basic-math-operators">Basic math operators</h2>
+<section id="minus-sign-bar" class="level3">
+<h3 class="anchored" data-anchor-id="minus-sign-bar"><code>-</code> (Minus sign; Bar)</h3>
+<section id="monadic---negate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic---negate">Monadic <code>-</code> (Negate)</h4>
+<div class="cell" data-execution_count="39">
+<pre class="apl cell-code"><code>- 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<span style="white-space:pre; font-family: monospace">  
+¯4
+  
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="40">
+<pre class="apl cell-code"><code>- ¯4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<span style="white-space:pre; font-family: monospace"> 
+4
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="41">
+<pre class="apl cell-code"><code>- 4 2 0 ¯3 ¯5</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<span style="white-space:pre; font-family: monospace">┌→──────────┐
+│¯4 ¯2 0 3 5│
+└~──────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="42">
+<pre class="apl cell-code"><code>¯4 2 0 ¯3 ¯5</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<span style="white-space:pre; font-family: monospace">┌→───────────┐
+│¯4 2 0 ¯3 ¯5│
+└~───────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic---minus-subtract" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic---minus-subtract">Dyadic <code>-</code> (Minus; subtract)</h4>
+<div class="cell" data-execution_count="43">
+<pre class="apl cell-code"><code>3-2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<span style="white-space:pre; font-family: monospace"> 
+1
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="44">
+<pre class="apl cell-code"><code>3 2 1 - 4 5 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│¯1 ¯3 0│
+└~──────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="45">
+<pre class="apl cell-code"><code>3 2 1 - 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│2 1 0│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="46">
+<pre class="apl cell-code"><code>1 - 3 2 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="46">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│¯2 ¯1 0│
+└~──────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="plus-sign" class="level3">
+<h3 class="anchored" data-anchor-id="plus-sign"><code>+</code> (Plus sign)</h3>
+<section id="monadic-conjugate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-conjugate">Monadic <code>+</code> (Conjugate)</h4>
+<div class="cell" data-execution_count="47">
+<pre class="apl cell-code"><code>+ 1.2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="47">
+<span style="white-space:pre; font-family: monospace">   
+1.2
+   
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="48">
+<pre class="apl cell-code"><code>+ ¯5j¯6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<span style="white-space:pre; font-family: monospace">    
+¯5J6
+    
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="49">
+<pre class="apl cell-code"><code>+ 1.2 0j4 ¯5j¯6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<span style="white-space:pre; font-family: monospace">┌→────────────┐
+│1.2 0J¯4 ¯5J6│
+└~────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-plus" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-plus">Dyadic <code>+</code> (Plus)</h4>
+<div class="cell" data-execution_count="50">
+<pre class="apl cell-code"><code>3+2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<span style="white-space:pre; font-family: monospace"> 
+5
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="51">
+<pre class="apl cell-code"><code>3 2 1 + 4 5 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="51">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│7 7 2│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="52">
+<pre class="apl cell-code"><code>3 2 1 + 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="52">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│4 3 2│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="53">
+<pre class="apl cell-code"><code>1 + 3 2 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│4 3 2│
+└~────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="divide-sign" class="level3">
+<h3 class="anchored" data-anchor-id="divide-sign"><code>÷</code> (Divide sign)</h3>
+<section id="monadic-reciprocol" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-reciprocol">Monadic <code>÷</code> (Reciprocol)</h4>
+<div class="cell" data-execution_count="54">
+<pre class="apl cell-code"><code>÷ 3 ¯2 3j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="54">
+<span style="white-space:pre; font-family: monospace">┌→───────────────────────────┐
+│0.3333333333 ¯0.5 0.12J¯0.16│
+└~───────────────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-divided-by" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-divided-by">Dyadic <code>÷</code> (Divided by)</h4>
+<div class="cell" data-execution_count="55">
+<pre class="apl cell-code"><code>3÷2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<span style="white-space:pre; font-family: monospace">   
+1.5
+   
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="56">
+<pre class="apl cell-code"><code>3÷2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<span style="white-space:pre; font-family: monospace">┌→─────────┐
+│1.5 1.2 ¯3│
+└~─────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="57">
+<pre class="apl cell-code"><code>3 2 1÷2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<span style="white-space:pre; font-family: monospace">┌→─────────┐
+│1.5 0.8 ¯1│
+└~─────────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="times-sign" class="level3">
+<h3 class="anchored" data-anchor-id="times-sign"><code>×</code> (Times sign)</h3>
+<section id="monadic-direction" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-direction">Monadic <code>×</code> (Direction)</h4>
+<div class="cell" data-execution_count="58">
+<pre class="apl cell-code"><code>× 3.1 ¯2 0 3j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<span style="white-space:pre; font-family: monospace">┌→─────────────┐
+│1 ¯1 0 0.6J0.8│
+└~─────────────┘
+</span>
+</div>
+</div>
+<p><code>3j4</code> means <code>3+4i</code>, which has a magnitude of 5 (because (3×3)+(4×4)=(5×5)). <code>0.6j0.8</code> represents a vector in the same direction as <code>3j4</code>, but with a magnitude of 5, since it’s <code>3j4÷5</code>.</p>
+</section>
+<section id="dyadic-times" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-times">Dyadic <code>×</code> (Times)</h4>
+<div class="cell" data-execution_count="59">
+<pre class="apl cell-code"><code>3×2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="59">
+<span style="white-space:pre; font-family: monospace"> 
+6
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="60">
+<pre class="apl cell-code"><code>3×2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="60">
+<span style="white-space:pre; font-family: monospace">┌→───────┐
+│6 7.5 ¯3│
+└~───────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="61">
+<pre class="apl cell-code"><code>3 2 1×2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="61">
+<span style="white-space:pre; font-family: monospace">┌→─────┐
+│6 5 ¯1│
+└~─────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="star" class="level3">
+<h3 class="anchored" data-anchor-id="star"><code>*</code> (Star)</h3>
+<section id="monadic-exponential" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-exponential">Monadic <code>*</code> (Exponential)</h4>
+<div class="cell" data-execution_count="62">
+<pre class="apl cell-code"><code>* 0 1 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="62">
+<span style="white-space:pre; font-family: monospace">┌→────────────────────────┐
+│1 2.718281828 7.389056099│
+└~────────────────────────┘
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-power" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-power">Dyadic <code>*</code> (Power)</h4>
+<div class="cell" data-execution_count="63">
+<pre class="apl cell-code"><code>49 5 ¯4 * 0.5 2 0.5</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<span style="white-space:pre; font-family: monospace">┌→───────┐
+│7 25 0J2│
+└~───────┘
+</span>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="expressions" class="level2">
+<h2 class="anchored" data-anchor-id="expressions">Expressions</h2>
+<section id="precedence" class="level3">
+<h3 class="anchored" data-anchor-id="precedence">Precedence</h3>
+<div class="cell" data-execution_count="64">
+<pre class="apl cell-code"><code>3×2+1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<span style="white-space:pre; font-family: monospace"> 
+9
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="65">
+<pre class="apl cell-code"><code>1 2 3×2+1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="65">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│3 6 9│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="66">
+<pre class="apl cell-code"><code>1 2 3×2+2 4 6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="66">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│4 12 24│
+└~──────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="67">
+<pre class="apl cell-code"><code>3 ¯5 + 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="67">
+<span style="white-space:pre; font-family: monospace">┌→───┐
+│7 ¯1│
+└~───┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="68">
+<pre class="apl cell-code"><code>8*÷3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="68">
+<span style="white-space:pre; font-family: monospace"> 
+2
+ 
+</span>
+</div>
+</div>
+</section>
+<section id="assignment" class="level3">
+<h3 class="anchored" data-anchor-id="assignment">Assignment</h3>
+<pre class="apl cell-code"><code>a←3</code></pre>
+<div class="cell" data-execution_count="87">
+<pre class="apl cell-code"><code>a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="87">
+<span style="white-space:pre; font-family: monospace"> 
+3
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="88">
+<pre class="apl cell-code"><code>⎕←a←3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="88">
+<span style="white-space:pre; font-family: monospace"> 
+3
+ 
+</span>
+</div>
+</div>
+<pre class="apl cell-code"><code>b←3 4</code></pre>
+<div class="cell" data-execution_count="90">
+<pre class="apl cell-code"><code>b</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="90">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+│3 4│
+└~──┘
+</span>
+</div>
+</div>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<div class="cell" hidden="true" data-execution_count="85">
+<pre class="apl cell-code"><code>{⍵×2} 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="85">
+<span style="white-space:pre; font-family: monospace"> 
+8
+ 
+</span>
+</div>
+</div>
+<pre class="apl cell-code"><code>f ← {⍵×2}</code></pre>
+<div class="cell" hidden="true" data-execution_count="70">
+<pre class="apl cell-code"><code>f 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<span style="white-space:pre; font-family: monospace"> 
+8
+ 
+</span>
+</div>
+</div>
+<pre class="apl cell-code"><code>g ← {⍵×2+⍺}</code></pre>
+<div class="cell" hidden="true" data-execution_count="72">
+<pre class="apl cell-code"><code>3 g 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<span style="white-space:pre; font-family: monospace">  
+20
+  
+</span>
+</div>
+</div>
+<pre class="apl cell-code"><code>h ← {2 + f ⍵}</code></pre>
+<div class="cell" hidden="true" data-execution_count="74">
+<pre class="apl cell-code"><code>h 4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<span style="white-space:pre; font-family: monospace">  
+10
+  
+</span>
+</div>
+</div>
+</section>
+<section id="destructuring-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="destructuring-assignment">Destructuring assignment</h3>
+<pre class="apl cell-code"><code>a b ← 3 4</code></pre>
+<div class="cell" data-execution_count="76">
+<pre class="apl cell-code"><code>a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="76">
+<span style="white-space:pre; font-family: monospace"> 
+3
+ 
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="array-rank" class="level2">
+<h2 class="anchored" data-anchor-id="array-rank">Array rank</h2>
+<section id="rho" class="level3">
+<h3 class="anchored" data-anchor-id="rho"><code>⍴</code> (rho)</h3>
+<section id="dyadic-reshape" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-reshape">Dyadic <code>⍴</code> (reshape)</h4>
+<div class="cell" data-execution_count="102">
+<pre class="apl cell-code"><code>⎕←a ← 1 2 3 4 5 6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="102">
+<span style="white-space:pre; font-family: monospace">┌→──────────┐
+│1 2 3 4 5 6│
+└~──────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-scrolled="true" data-execution_count="103">
+<pre class="apl cell-code"><code>⎕←mat←2 3 ⍴ a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="103">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+↓1 2 3│
+│4 5 6│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="104">
+<pre class="apl cell-code"><code>3 2 ⍴ a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="104">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+↓1 2│
+│3 4│
+│5 6│
+└~──┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="105">
+<pre class="apl cell-code"><code>1 6 ⍴ a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="105">
+<span style="white-space:pre; font-family: monospace">┌→──────────┐
+↓1 2 3 4 5 6│
+└~──────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="109">
+<pre class="apl cell-code"><code>⎕←c←2 2 3 ⍴ a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="109">
+<span style="white-space:pre; font-family: monospace">┌┌→────┐
+↓↓1 2 3│
+││4 5 6│
+││     │
+││1 2 3│
+││4 5 6│
+└└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="108">
+<pre class="apl cell-code"><code>2 3 ⍴ 1</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="108">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+↓1 1 1│
+│1 1 1│
+└~────┘
+</span>
+</div>
+</div>
+</section>
+<section id="monadic-shape-of" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-shape-of">Monadic <code>⍴</code> (shape of)</h4>
+<div class="cell" data-execution_count="82">
+<pre class="apl cell-code"><code>⍴a</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="82">
+<span style="white-space:pre; font-family: monospace">┌→┐
+│6│
+└~┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="83">
+<pre class="apl cell-code"><code>⍴mat</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="83">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+│2 3│
+└~──┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="92">
+<pre class="apl cell-code"><code>⍴3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="92">
+<span style="white-space:pre; font-family: monospace">┌⊖┐
+│0│
+└~┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="94">
+<pre class="apl cell-code"><code>⍬</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="94">
+<span style="white-space:pre; font-family: monospace">┌⊖┐
+│0│
+└~┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="95">
+<pre class="apl cell-code"><code>⍴⍬</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="95">
+<span style="white-space:pre; font-family: monospace">┌→┐
+│0│
+└~┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="96">
+<pre class="apl cell-code"><code>⍴⍴mat</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="96">
+<span style="white-space:pre; font-family: monospace">┌→┐
+│2│
+└~┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="97">
+<pre class="apl cell-code"><code>⍴⍴⍴mat</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="97">
+<span style="white-space:pre; font-family: monospace">┌→┐
+│1│
+└~┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="110">
+<pre class="apl cell-code"><code>⍴c</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="110">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+│2 2 3│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="111">
+<pre class="apl cell-code"><code>⍴⍴⍴c</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="111">
+<span style="white-space:pre; font-family: monospace">┌→┐
+│1│
+└~┘
+</span>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="strings-characters-and-character-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="strings-characters-and-character-vectors">Strings (characters and character vectors)</h2>
+<div class="cell" data-execution_count="119">
+<pre class="apl cell-code"><code>'ACF'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="119">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+│ACF│
+└───┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="120">
+<pre class="apl cell-code"><code>'A' 'C' 'F'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="120">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+│ACF│
+└───┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<pre class="apl cell-code"><code>⍴'y'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<span style="white-space:pre; font-family: monospace">
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<pre class="apl cell-code"><code>⍴'your boat'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<span style="white-space:pre; font-family: monospace">9
+</span>
+</div>
+</div>
+</section>
+<section id="iota" class="level2">
+<h2 class="anchored" data-anchor-id="iota"><code>⍳</code> (iota)</h2>
+<section id="monadic-index-generator" class="level3">
+<h3 class="anchored" data-anchor-id="monadic-index-generator">monadic <code>⍳</code> (index generator)</h3>
+<div class="cell" data-execution_count="112">
+<pre class="apl cell-code"><code>⍳4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="112">
+<span style="white-space:pre; font-family: monospace">┌→──────┐
+│1 2 3 4│
+└~──────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="113">
+<pre class="apl cell-code"><code>⍳2 3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="113">
+<span style="white-space:pre; font-family: monospace">┌→──────────────────┐
+↓ ┌→──┐ ┌→──┐ ┌→──┐ │
+│ │1 1│ │1 2│ │1 3│ │
+│ └~──┘ └~──┘ └~──┘ │
+│ ┌→──┐ ┌→──┐ ┌→──┐ │
+│ │2 1│ │2 2│ │2 3│ │
+│ └~──┘ └~──┘ └~──┘ │
+└∊──────────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="114">
+<pre class="apl cell-code"><code>2 3 ⍴ ⍳6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="114">
+<span style="white-space:pre; font-family: monospace">┌→────┐
+↓1 2 3│
+│4 5 6│
+└~────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="116">
+<pre class="apl cell-code"><code>1+2×⍳6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="116">
+<span style="white-space:pre; font-family: monospace">┌→────────────┐
+│3 5 7 9 11 13│
+└~────────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="117">
+<pre class="apl cell-code"><code>⍳0</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="117">
+<span style="white-space:pre; font-family: monospace">┌⊖┐
+│0│
+└~┘
+</span>
+</div>
+</div>
+</section>
+<section id="dyadic-index-of" class="level3">
+<h3 class="anchored" data-anchor-id="dyadic-index-of">dyadic <code>⍳</code> (index of)</h3>
+<div class="cell" data-execution_count="129">
+<pre class="apl cell-code"><code>1 3 6 5 4 ⍳ 3</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="129">
+<span style="white-space:pre; font-family: monospace"> 
+2
+ 
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="122">
+<pre class="apl cell-code"><code>'ABCDABCDEF' ⍳ 'ACFG'</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="122">
+<span style="white-space:pre; font-family: monospace">┌→────────┐
+│1 3 10 11│
+└~────────┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="124">
+<pre class="apl cell-code"><code>⎕←mat←3 2 ⍴ ⍳6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="124">
+<span style="white-space:pre; font-family: monospace">┌→──┐
+↓1 2│
+│3 4│
+│5 6│
+└~──┘
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="125">
+<pre class="apl cell-code"><code>mat ⍳ 5 6</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="125">
+<span style="white-space:pre; font-family: monospace"> 
+3
+ 
+</span>
+</div>
+</div>
+</section>
+</section>
+<section id="stuff-we-havent-done-yet" class="level2">
+<h2 class="anchored" data-anchor-id="stuff-we-havent-done-yet">Stuff we haven’t done yet…</h2>
+<div class="cell" data-execution_count="30">
+<pre class="apl cell-code"><code>|3j4</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<span style="white-space:pre; font-family: monospace">5
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="39">
+<pre class="apl cell-code"><code>2j2÷(|2j2)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<span style="white-space:pre; font-family: monospace">0.707107J0.707107
+</span>
+</div>
+</div>
+<div class="cell" data-execution_count="38">
+<pre class="apl cell-code"><code>×2j2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<span style="white-space:pre; font-family: monospace">0.707107J0.707107
+</span>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
