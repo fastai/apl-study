@@ -14,7 +14,7 @@ format:
     toc: true
 
 website:
-  title: "apl_study"
+  title: "apl-study"
   description: "fast.ai APL study group notes"
   execute: 
     enabled: false
@@ -22,14 +22,14 @@ website:
   open-graph: true
   reader-mode: true
   repo-branch: master
-  repo-url: https://github.com/Isaac-Flath/apl_study/tree/master/
+  repo-url: https://github.com/fastai/apl-study/tree/master/
   repo-actions: [issue]
   navbar:
     background: primary
     search: true
     right:
       - icon: github
-        href: https://github.com/Isaac-Flath/apl_study/tree/master/
+        href: https://github.com/fastai/apl-study/tree/master/
   sidebar:
     style: "floating"
 
