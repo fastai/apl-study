@@ -1,4 +1,9 @@
+pre.language-APL {
+  line-height: 1;
+}
+
 .cell-output pre {
+  padding-left: 9px;
   margin-left: 0.8rem;
   margin-top: 0;
   background: none;
