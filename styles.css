@@ -28,7 +28,11 @@ pre.language-APL {
   font-style: normal;
 }
 
-code {
+pre.language-APL {
+    font-family: 'sax2' !important;
+}   
+
+.apl code {
     font-family: 'sax2' !important;
 }   
 
