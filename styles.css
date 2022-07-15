@@ -22,13 +22,13 @@ pre.language-APL {
 }
 
 @font-face {
-  font-family: 'aplfont', monospace;
-  src: url('www/SAX2.ttf') format('truetype');
+  font-family: 'sax2';
+  src: url('www/SAX2.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 code {
-    font-family: 'aplfont';
+    font-family: 'sax2' !important;
 }   
 
