@@ -22,10 +22,11 @@ pre.language-APL {
 }
 
 @font-face {
-  font-family: aplfont;
-  src: url(https://github.com/abrudz/SAX2/raw/master/SAX2.ttf);
+  font-family: aplfont, monospace;
+  src: url(www/SAX2.ttf) format('truetype');
 }
 
 code {
     font-family: aplfont;
 }   
+
