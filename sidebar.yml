@@ -3,5 +3,7 @@ website:
     contents:
       - index.ipynb
       - APL.ipynb
-      - README.md
+      - operators.ipynb
+      - competition.ipynb
       - python.ipynb
+
