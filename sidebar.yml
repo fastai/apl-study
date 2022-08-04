@@ -2,8 +2,8 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - APL.ipynb
-      - operators.ipynb
-      - competition.ipynb
+      - 01_APL.ipynb
+      - 02_functions.ipynb
+      - 03_operators.ipynb
+      - 04_competition.ipynb
       - python.ipynb
-
