@@ -6,4 +6,5 @@ website:
       - 02_functions.ipynb
       - 03_operators.ipynb
       - 04_competition.ipynb
+      - 05_the_rest.ipynb
       - python.ipynb

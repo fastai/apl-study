@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "apl-study"
+  site-url: "https://fastai.github.io/apl-study/"
+  description: "fast.ai APL study group notes"
+  repo-branch: master
+  repo-url: "https://github.com/fastai/apl-study/tree/master/"
