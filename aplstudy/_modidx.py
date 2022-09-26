@@ -4,5 +4,5 @@ d = { 'settings': { 'branch': 'master',
                 'doc_baseurl': '/apl-study/',
                 'doc_host': 'https://fastai.github.io',
                 'git_url': 'https://github.com/fastai/apl-study/tree/master/',
-                'lib_path': 'apl-study'},
+                'lib_path': 'aplstudy'},
   'syms': {}}

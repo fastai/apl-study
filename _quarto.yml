@@ -6,6 +6,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    resources: '*.woff2'
 
 website:
   twitter-card: true
