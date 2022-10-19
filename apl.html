@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.231">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jeremy Howard">
+<meta name="dcterms.date" content="2022-07-05">
+
+<title>apl-study - Basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="apl-study - Basics">
+<meta property="og:description" content="This series will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs.">
+<meta property="og:site-name" content="apl-study">
+<meta name="twitter:title" content="apl-study - Basics">
+<meta name="twitter:description" content="This series will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">apl-study</span>
+    </a>
+  </div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Basics</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">APL Study Group</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apl.html" class="sidebar-item-text sidebar-link active">Basics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link">First functions</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./operators.html" class="sidebar-item-text sidebar-link">Operators and axis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">APL Competition 2022</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./the_rest.html" class="sidebar-item-text sidebar-link">The rest of the glyphs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python.html" class="sidebar-item-text sidebar-link">Python equivalents</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#some-objects" id="toc-some-objects" class="nav-link active" data-scroll-target="#some-objects">Some objects</a>
+  <ul class="collapse">
+  <li><a href="#real" id="toc-real" class="nav-link" data-scroll-target="#real">Real</a></li>
+  <li><a href="#complex" id="toc-complex" class="nav-link" data-scroll-target="#complex">Complex</a></li>
+  <li><a href="#rank-1-arrays" id="toc-rank-1-arrays" class="nav-link" data-scroll-target="#rank-1-arrays">Rank-1 arrays</a></li>
+  <li><a href="#arrays-in-arrays" id="toc-arrays-in-arrays" class="nav-link" data-scroll-target="#arrays-in-arrays">Arrays in arrays</a></li>
+  <li><a href="#comment" id="toc-comment" class="nav-link" data-scroll-target="#comment">⍝ (Comment)</a></li>
+  </ul></li>
+  <li><a href="#basic-math-functions" id="toc-basic-math-functions" class="nav-link" data-scroll-target="#basic-math-functions">Basic math functions</a>
+  <ul class="collapse">
+  <li><a href="#minus-sign-bar" id="toc-minus-sign-bar" class="nav-link" data-scroll-target="#minus-sign-bar"><code>-</code> (Minus sign; Bar)</a></li>
+  <li><a href="#plus-sign" id="toc-plus-sign" class="nav-link" data-scroll-target="#plus-sign"><code>+</code> (Plus sign)</a></li>
+  <li><a href="#stilevertical-bar" id="toc-stilevertical-bar" class="nav-link" data-scroll-target="#stilevertical-bar"><code>|</code> (Stile;Vertical Bar)</a></li>
+  <li><a href="#divide-sign" id="toc-divide-sign" class="nav-link" data-scroll-target="#divide-sign"><code>÷</code> (Divide sign)</a></li>
+  <li><a href="#times-sign" id="toc-times-sign" class="nav-link" data-scroll-target="#times-sign"><code>×</code> (Times sign)</a></li>
+  <li><a href="#star" id="toc-star" class="nav-link" data-scroll-target="#star"><code>*</code> (Star)</a></li>
+  <li><a href="#exclamation-mark" id="toc-exclamation-mark" class="nav-link" data-scroll-target="#exclamation-mark"><code>!</code> (Exclamation mark)</a></li>
+  <li><a href="#question-mark" id="toc-question-mark" class="nav-link" data-scroll-target="#question-mark"><code>?</code> (Question mark)</a></li>
+  <li><a href="#circle" id="toc-circle" class="nav-link" data-scroll-target="#circle"><code>○</code> (Circle)</a></li>
+  <li><a href="#logarithm-circle-star" id="toc-logarithm-circle-star" class="nav-link" data-scroll-target="#logarithm-circle-star"><code>⍟</code> (Logarithm; Circle Star)</a></li>
+  </ul></li>
+  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions">Expressions</a>
+  <ul class="collapse">
+  <li><a href="#precedence" id="toc-precedence" class="nav-link" data-scroll-target="#precedence">Precedence</a></li>
+  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
+  <li><a href="#destructuring-assignment" id="toc-destructuring-assignment" class="nav-link" data-scroll-target="#destructuring-assignment">Destructuring assignment</a></li>
+  </ul></li>
+  <li><a href="#array-rank" id="toc-array-rank" class="nav-link" data-scroll-target="#array-rank">Array rank</a>
+  <ul class="collapse">
+  <li><a href="#rho" id="toc-rho" class="nav-link" data-scroll-target="#rho"><code>⍴</code> (rho)</a></li>
+  </ul></li>
+  <li><a href="#strings-characters-and-character-vectors" id="toc-strings-characters-and-character-vectors" class="nav-link" data-scroll-target="#strings-characters-and-character-vectors">Strings (characters and character vectors)</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fastai/apl-study/tree/master/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Basics</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Dyalog</div>
+    <div class="quarto-category">APL</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jeremy Howard </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 5, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<p>This series will explore all the different glyphs in Dyalog APL. Wherever possible examples of a glyph will exist for each glyph that do not use other glyphs. The purpose of this post is to create documentation for glyphs that are helpful for beginners getting started.</p>
+<p>To get help on a glyph, such as <code>≠</code>, type:</p>
+<pre><code>]Help ≠</code></pre>
+<p>To get more detailed “pictures” of arrays and tacit functions type:</p>
+<div class="cell">
+<pre class="apl cell-code"><code>]box on -style=max -trains=tree -fns=on</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────────────────────────────────┐
+│Was ON -style=max -trains=tree -fns=on│
+└──────────────────────────────────────┘
+</pre>
+</div>
+</div>
+<p>This first notebook in the series covers the basic objects.</p>
+<section id="some-objects" class="level2">
+<h2 class="anchored" data-anchor-id="some-objects">Some objects</h2>
+<section id="real" class="level3">
+<h3 class="anchored" data-anchor-id="real">Real</h3>
+<p>Numbers are represented as they are in many other languages. Integers, negative numbers, and decimals can be created.</p>
+<blockquote class="blockquote">
+<p>Note: Notice that <code>¯</code> is a high bar and not the symbol normally used in many other programming languages such as python</p>
+</blockquote>
+<div class="cell">
+<pre class="apl cell-code"><code>1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">  
+¯1
+  
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1.5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+1.5
+   
+</pre>
+</div>
+</div>
+</section>
+<section id="complex" class="level3">
+<h3 class="anchored" data-anchor-id="complex">Complex</h3>
+<p>Complex numbers can be created using <code>j</code> to represent the <code>i</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>0j4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+0J4
+   
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3j4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+3J4
+   
+</pre>
+</div>
+</div>
+<p><code>3j4</code> means <code>3+4i</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>4j0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+4
+ 
+</pre>
+</div>
+</div>
+<p><code>4j0</code> means <code>4+0i</code>, which is just the real number 4</p>
+<div class="cell">
+<pre class="apl cell-code"><code>¯5j¯6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">     
+¯5J¯6
+     
+</pre>
+</div>
+</div>
+</section>
+<section id="rank-1-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="rank-1-arrays">Rank-1 arrays</h3>
+<p>The syntax for creating a rank-1 array is to separate elements with spaces.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>2 3 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│2 3 1│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>2 ¯3 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────┐
+│2 ¯3 1│
+└~─────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>0j4 ¯5j¯6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│0J4 ¯5J¯6│
+└~────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="arrays-in-arrays" class="level3">
+<h3 class="anchored" data-anchor-id="arrays-in-arrays">Arrays in arrays</h3>
+<p>To nest arrays we now need to use parenthesis. The parenthesis are dictating the order of operations (it’s not array specific syntax).</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 4 (1 2)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────┐
+│         ┌→──┐ │
+│ 1 2 3 4 │1 2│ │
+│         └~──┘ │
+└∊──────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>(1 2)(3 4)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────┐
+│ ┌→──┐ ┌→──┐ │
+│ │1 2│ │3 4│ │
+│ └~──┘ └~──┘ │
+└∊────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>(1 2)(3 4)5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────┐
+│ ┌→──┐ ┌→──┐   │
+│ │1 2│ │3 4│ 5 │
+│ └~──┘ └~──┘   │
+└∊──────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="comment" class="level3">
+<h3 class="anchored" data-anchor-id="comment">⍝ (Comment)</h3>
+<p><code>⍝</code> tells apl that anything after this character on that line should be ignored and not executed. Great for writing yourself notes for what pieces of code do.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍝ This is a comment and doesn't do anything
+1 2 3 ⍝ This is a comment after some code</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 2 3│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="basic-math-functions" class="level2">
+<h2 class="anchored" data-anchor-id="basic-math-functions">Basic math functions</h2>
+<section id="minus-sign-bar" class="level3">
+<h3 class="anchored" data-anchor-id="minus-sign-bar"><code>-</code> (Minus sign; Bar)</h3>
+<section id="monadic---negate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic---negate">Monadic <code>-</code> (Negate)</h4>
+<p>Negate multiplies each element by <code>¯1</code>. Positive numbers become negative and negative numbers become positive.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>- 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">  
+¯4
+  
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>- ¯4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+4
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>- 4 2 0 ¯3 ¯5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│¯4 ¯2 0 3 5│
+└~──────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>¯4 2 0 ¯3 ¯5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────────┐
+│¯4 2 0 ¯3 ¯5│
+└~───────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic---minus-subtract" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic---minus-subtract">Dyadic <code>-</code> (Minus; subtract)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>3-2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<p>Subtracting happens element-wise.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2 1 - 4 5 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│¯1 ¯3 0│
+└~──────┘
+</pre>
+</div>
+</div>
+<p>APL will broadcast to make element-wise subtraction possible</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2 1 - 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│2 1 0│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 - 3 2 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│¯2 ¯1 0│
+└~──────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="plus-sign" class="level3">
+<h3 class="anchored" data-anchor-id="plus-sign"><code>+</code> (Plus sign)</h3>
+<section id="monadic-conjugate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-conjugate">Monadic <code>+</code> (Conjugate)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>+ 1.2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+1.2
+   
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>+ ¯5j¯6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">    
+¯5J6
+    
+</pre>
+</div>
+</div>
+<p><code>¯5j¯6</code> means <code>¯5+¯6i</code>. Conjugate negates the imaginary component of complex numbers.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>+ 1.2 0j4 ¯5j¯6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────┐
+│1.2 0J¯4 ¯5J6│
+└~────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-plus" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-plus">Dyadic <code>+</code> (Plus)</h4>
+<p>Plus works element-wise just like minus.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3+2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+5
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2 1 + 4 5 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│7 7 2│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2 1 + 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│4 3 2│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 + 3 2 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│4 3 2│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="stilevertical-bar" class="level3">
+<h3 class="anchored" data-anchor-id="stilevertical-bar"><code>|</code> (Stile;Vertical Bar)</h3>
+<section id="monadic-magnitude" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-magnitude">Monadic <code>|</code> (Magnitude)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>|3 ¯3 3j4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│3 3 5│
+└~────┘
+</pre>
+</div>
+</div>
+<p><code>3j4</code> means <code>3+4i</code>, which has a magnitude of 5 (because (3×3)+(4×4)=(5×5)).</p>
+</section>
+<section id="dyadic-residuemodulus" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-residuemodulus">Dyadic <code>|</code> (Residue;Modulus)</h4>
+<p>Residue;Modulus works element-wise.</p>
+<ul>
+<li>2 divided by 7 = 3 with a <strong>remainder of 1</strong></li>
+<li>10 divided by 13 = 1 <strong>Modulus 3</strong></li>
+<li>2 divided by 8 = 4 <strong>Mod 0</strong></li>
+</ul>
+<div class="cell">
+<pre class="apl cell-code"><code>2 10 2 | 7 13 8</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 3 0│
+└~────┘
+</pre>
+</div>
+</div>
+<p>Negative numbers can seem a bit confusing at first. <a href="https://www.omnicalculator.com/math/modulo-of-negative-numbers#how-does-modulo-work-with-negative-numbers">Here</a> is an article that can help you understand modulo with negative numbers.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>2 10 ¯2.5 | 7 ¯13 8</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────┐
+│1 7 ¯2│
+└~─────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>10 10 ¯10 ¯10 | 13 ¯13 13 ¯13</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│3 7 ¯7 ¯3│
+└~────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="divide-sign" class="level3">
+<h3 class="anchored" data-anchor-id="divide-sign"><code>÷</code> (Divide sign)</h3>
+<section id="monadic-reciprocol" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-reciprocol">Monadic <code>÷</code> (Reciprocol)</h4>
+<p>Reciprocal is division where 1 is the left argument.</p>
+<ul>
+<li><code>÷ 3</code> is equivalent to <code>1 ÷ 3</code></li>
+<li><code>÷ ¯2</code> is equivalent to <code>1 ÷ ¯2</code></li>
+<li><code>÷ 3j4</code> is equivalent to <code>1 ÷ 3j4</code></li>
+</ul>
+<div class="cell">
+<pre class="apl cell-code"><code>÷ 3 ¯2 3j4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────────────────────────┐
+│0.3333333333 ¯0.5 0.12J¯0.16│
+└~───────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-divided-by" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-divided-by">Dyadic <code>÷</code> (Divided by)</h4>
+<p>Divided by does element-wise division</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3÷2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+1.5
+   
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3÷2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────┐
+│1.5 1.2 ¯3│
+└~─────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2 1÷2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────┐
+│1.5 0.8 ¯1│
+└~─────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="times-sign" class="level3">
+<h3 class="anchored" data-anchor-id="times-sign"><code>×</code> (Times sign)</h3>
+<section id="monadic-direction" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-direction">Monadic <code>×</code> (Direction)</h4>
+<p><strong>For real numbers:</strong> 1 for positive numbers, ¯1 for negative numbers, 0 for 0.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>× 3.1 ¯2 0 3j4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────────┐
+│1 ¯1 0 0.6J0.8│
+└~─────────────┘
+</pre>
+</div>
+</div>
+<p>Complex numbers are divided by their magnitude. <code>0.6j0.8</code> represents a vector in the same direction as <code>3j4</code>, but with a magnitude of 1, since it’s <code>3j4÷5</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3j4÷(|3j4)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">       
+0.6J0.8
+       
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>÷∘|⍨3j4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">       
+0.6J0.8
+       
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>÷∘|⍨</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   ⍨
+ ┌─┘
+ ∘
+┌┴┐
+÷ |
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-times" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-times">Dyadic <code>×</code> (Times)</h4>
+<p>Element-wise multiplication</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3×2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+6
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3×2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────┐
+│6 7.5 ¯3│
+└~───────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2 1×2 2.5 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────┐
+│6 5 ¯1│
+└~─────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="star" class="level3">
+<h3 class="anchored" data-anchor-id="star"><code>*</code> (Star)</h3>
+<section id="monadic-exponential" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-exponential">Monadic <code>*</code> (Exponential)</h4>
+<p>Exponential takes <code>e</code> to the power of the input argument. <code>* 1</code> is equal to <code>e</code></p>
+<div class="cell">
+<pre class="apl cell-code"><code>* 0 1 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────────────────┐
+│1 2.718281828 7.389056099│
+└~────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-power" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-power">Dyadic <code>*</code> (Power)</h4>
+<p>Power takes the left arguement and puts it to the power of the right arguement. Power is applied elementwise.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>49 5 ¯4 * 0.5 2 0.5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────┐
+│7 25 0J2│
+└~───────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exclamation-mark" class="level3">
+<h3 class="anchored" data-anchor-id="exclamation-mark"><code>!</code> (Exclamation mark)</h3>
+<section id="monadic-factorial" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-factorial">Monadic <code>!</code> (factorial)</h4>
+<p>5 Factorial, or <code>!5</code> is equal to <code>5×4×3×2×1</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>!5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+120
+   
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>!1.5  ⍝ gamma(1.5+1)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">           
+1.329340388
+           
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-binomial" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-binomial">Dyadic <code>!</code> (Binomial)</h4>
+<p>Binomial can be defined using factorial: <code>X!Y ←→ (!Y)÷(!X)×!Y-X</code>. R is the number of selections of X things from Y things.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>0 1 2 3 4 5 ! 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────┐
+│1 5 10 10 5 1│
+└~────────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="question-mark" class="level3">
+<h3 class="anchored" data-anchor-id="question-mark"><code>?</code> (Question mark)</h3>
+<section id="monadic-roll" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-roll">Monadic <code>?</code> (Roll)</h4>
+<p>Gives a random integer between 1 and the input argument or, in the case of 0, a random non-integer between 0 and 1</p>
+<div class="cell">
+<pre class="apl cell-code"><code>? 6 6 6 6 6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│4 3 4 2 1│
+└~────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>? 0 0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────────────────┐
+│0.5456603511 0.3390443517│
+└~────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-deal" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-deal">Dyadic <code>?</code> (Deal)</h4>
+<p>Generates left argument number of numbers between 1 and the right argument. So <code>13 ? 52</code> will give 13 numbers between 1 and 52. Deal does sampling without replacement, meaning the same number will not show up multiple times.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>13 ? 52</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────────────────────────┐
+│51 50 26 10 40 4 34 2 38 8 27 42 44│
+└~──────────────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="circle" class="level3">
+<h3 class="anchored" data-anchor-id="circle"><code>○</code> (Circle)</h3>
+<section id="monadic-pi-times" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-pi-times">Monadic <code>○</code> (Pi Times)</h4>
+<p>Multiplies <code>pi</code> times the input argument.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>○ 0 1 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────────────────┐
+│0 3.141592654 6.283185307│
+└~────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-circular-function---trig" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-circular-function---trig">Dyadic <code>○</code> (Circular Function - Trig)</h4>
+<p>For table of stuff <code>ᴏ</code> can do, see the <a href="https://help.dyalog.com/latest/Content/Language/Symbols/Circle.htm">docs</a>. Theleft argument selects function(s) to apply. E.g <code>1</code> gives Sine <code>⍵</code>, and and <code>2</code> is Cos.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>0 1 ○ 0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│1 0│
+└~──┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="logarithm-circle-star" class="level3">
+<h3 class="anchored" data-anchor-id="logarithm-circle-star"><code>⍟</code> (Logarithm; Circle Star)</h3>
+<section id="monadic-natural-log" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-natural-log">Monadic <code>⍟</code> (Natural Log)</h4>
+<p>The natural logarithm of a number is its logarithm to the base of the mathematical constant <code>e</code></p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍟ 1 2 3 (*1)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────────────────────────┐
+│0 0.6931471806 1.098612289 1│
+└~───────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-log" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-log">Dyadic <code>⍟</code> (Log)</h4>
+<p>Calculates the log. <code>2⍟32</code> is equal to log2(32)</p>
+<div class="cell">
+<pre class="apl cell-code"><code>2 10 ⍟ 32 1000</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│5 3│
+└~──┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="expressions" class="level2">
+<h2 class="anchored" data-anchor-id="expressions">Expressions</h2>
+<section id="precedence" class="level3">
+<h3 class="anchored" data-anchor-id="precedence">Precedence</h3>
+<p>Function precedence in APL is always right to left, evaluating parentheses when encountered. This means <code>3×2+1</code> does the addition first before the multiplication because addition is further right. You could change the order of operations by using parenthesis, <code>(3×2)+1</code>, or reordering it to <code>1+3×2</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3×2+1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+9
+ 
+</pre>
+</div>
+</div>
+<p>Before functions are applied, vectors are created. <code>1 2 3×2</code> creates the vector <code>1 2 3</code> first, then applies functions right to left. The below code cell could be rewritten as <code>(1 2 3)×2</code>, but since the parenthesis is redundant it is often best practice to leave it off. This is often referred to as stranding having a higher binding strength than function applications.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3×2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│2 4 6│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reminder: In the below examples, remember that functions are applied right to left! <code>1 2 3×2+1</code> adds <code>2+1</code> to get 3, then multiplies by the vector <code>1 2 3</code></p>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3×2+1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│3 6 9│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3×2+2 4 6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│4 12 24│
+└~──────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 ¯5 + 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───┐
+│7 ¯1│
+└~───┘
+</pre>
+</div>
+</div>
+<p>The next example follows the same precedence. <code>÷3</code> is done first (reciprocal 3).</p>
+<div class="cell">
+<pre class="apl cell-code"><code>8*÷3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+2
+ 
+</pre>
+</div>
+</div>
+</section>
+<section id="assignment" class="level3">
+<h3 class="anchored" data-anchor-id="assignment">Assignment</h3>
+<p>The left arrow assigns to variables. <code>a←3</code> is 3 is assigned to a.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>a←3
+a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+3
+ 
+</pre>
+</div>
+</div>
+<p>There’re 2 interesting things in the next example:</p>
+<ul>
+<li>⎕ is a special variable that represents the screen. By assigning a value to <em>quad</em> it prints to the screen.</li>
+<li>← follows usual precedence of right to left. 3 is assigned to a, then a is assigned to ⎕.</li>
+</ul>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕←a←3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+3
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>b←3 4
+b</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│3 4│
+└~──┘
+</pre>
+</div>
+</div>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<p>Single argument functions (monadic functions) in APL have the argument <code>⍵</code>, which always is input to the right of the function. You cannot change the name of the argument. Enclosing something in curly braces is the syntax for function definition.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>{⍵×2} 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+8
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>f ← {⍵×2}
+f 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+8
+ 
+</pre>
+</div>
+</div>
+<p>Dual argument function (dyadic functions) in APL have an additional argument <code>⍺</code>, which is input to the left of the function.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>g ← {⍵×2+⍺}
+3 g 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">  
+20
+  
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>f ← {⍵×2}
+h ← {2 + f ⍵}
+h 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">  
+10
+  
+</pre>
+</div>
+</div>
+<section id="statement-separator" class="level4">
+<h4 class="anchored" data-anchor-id="statement-separator">⋄ (Statement separator)</h4>
+<p>Statement separator can be used to perform a computation in multiple steps. In the below example <code>a ← ⍵×2</code> is evaluated, then <code>2 + a</code> is evaluated and returned.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>f ← {a ← ⍵×2 ⋄ 2 + a}
+f 4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">  
+10
+  
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>f←{a←1 ⋄ 2 ⋄ 3}  ⍝ First non-assignment is the result of the function
+f 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+2
+ 
+</pre>
+</div>
+</div>
+</section>
+<section id="guard-expressions" class="level4">
+<h4 class="anchored" data-anchor-id="guard-expressions">Guard expressions</h4>
+<p>A guard expression allows you to specify a condition for a result.</p>
+<p><code>{⍵&gt;1:1 ⋄ ⍵}</code> says if <code>⍵</code> is greater than 1, then 1 else <code>⍵</code></p>
+<div class="cell">
+<pre class="apl cell-code"><code>fact←{⍵&gt;1:1 ⋄ ⍵}</code></pre>
+</div>
+<p>Other conditionals and more complex expressions can be used in guard expressions</p>
+<div class="cell">
+<pre class="apl cell-code"><code>fact1←{⍵≤1:1 ⋄ ⍵×fact ⍵-1 }</code></pre>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>fact 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>fact 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+</section>
+<section id="delnabla-recursion" class="level4">
+<h4 class="anchored" data-anchor-id="delnabla-recursion">∇ Del/Nabla (Recursion)</h4>
+<p>Recursion can be simplified using <code>∇</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>{⍵≤1:1 ⋄ ⍵×∇ ⍵-1} 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+120
+   
+</pre>
+</div>
+</div>
+<p>This accomplishes the same thing as the function calling itself more explicitly</p>
+<div class="cell">
+<pre class="apl cell-code"><code>fact1 ← {⍵≤1:1 ⋄ ⍵×fact1 ⍵-1 }
+fact2 ← {⍵≤1:1 ⋄ ⍵×∇ ⍵-1}
+
+(fact1 1) = (fact2 1)
+(fact1 5) = (fact2 5)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>{⍵≤1:1 ⋄ ⍵×∇ ⍵-1} 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+120
+   
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>fact ← {⍵≤1:1 ⋄ ⍵×∇ ⍵-1}</code></pre>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>fact 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>fact 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+120
+   
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="destructuring-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="destructuring-assignment">Destructuring assignment</h3>
+<div class="cell">
+<pre class="apl cell-code"><code>(a b) ← 3 4
+a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">3
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="array-rank" class="level2">
+<h2 class="anchored" data-anchor-id="array-rank">Array rank</h2>
+<section id="rho" class="level3">
+<h3 class="anchored" data-anchor-id="rho"><code>⍴</code> (rho)</h3>
+<section id="dyadic-reshape" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-reshape">Dyadic <code>⍴</code> (reshape)</h4>
+<p>By default a series of numbers creates a 1 dimensional vector</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕ ← 1 2 3 4 5 6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│1 2 3 4 5 6│
+└~──────────┘
+</pre>
+</div>
+</div>
+<p>The <code>⍴</code> function can reshape it into the specified shape.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>a ← 1 2 3 4 5 6
+⎕←mat←2 3 ⍴ a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+↓1 2 3│
+│4 5 6│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>a ← 1 2 3 4 5 6
+3 2 ⍴ a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+↓1 2│
+│3 4│
+│5 6│
+└~──┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>a ← 1 2 3 4 5 6
+1 6 ⍴ a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+↓1 2 3 4 5 6│
+└~──────────┘
+</pre>
+</div>
+</div>
+<p>Reshape will broadcast the original vector as needed to create the desired shape.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>a ← 1 2 3 4 5 6
+⎕←c←2 2 3 ⍴ a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌┌→────┐
+↓↓1 2 3│
+││4 5 6│
+││     │
+││1 2 3│
+││4 5 6│
+└└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>2 3 ⍴ 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+↓1 1 1│
+│1 1 1│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="monadic-shape-of" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-shape-of">Monadic <code>⍴</code> (shape of)</h4>
+<p>The mondadic <code>⍴</code> tells you what the shape is.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>a ← 1 2 3 4 5 6
+⍴a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│6│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>mat←2 3 ⍴ a
+⍴mat</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│2 3│
+└~──┘
+</pre>
+</div>
+</div>
+<p>The shape of a scalar is the empty vector.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍴3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌⊖┐
+│0│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍬</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌⊖┐
+│0│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍴⍬</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│0│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>mat←2 3 ⍴ a
+⍴⍴mat</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│2│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>mat←2 3 ⍴ a
+⍴⍴⍴mat</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│1│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>c←2 2 3 ⍴ a
+⍴c</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│2 2 3│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>c←2 2 3 ⍴ a
+⍴⍴⍴c</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│1│
+└~┘
+</pre>
+</div>
+</div>
+<p>The boxes around the numbers have special meanings that are useful. The Display Conventions section covers the special meanings (6.4.1 in the <a href="https://www.dyalog.com/uploads/documents/MasteringDyalogAPL.pdf">Mastering Dyalog APL book</a>). For convenience we have put the text of that section below.</p>
+<p>The upper-left corner of the box provides information about the shape of the displayed value:</p>
+<ul>
+<li>a single horizontal arrow for a vector</li>
+<li>two (or more) arrows for a matrix or higher rank arrays</li>
+<li>no arrow at all for scalars containing nested values, a concept we haven’t seen up to now</li>
+</ul>
+<p>The bottom-left corner of the box provides information about the contents of the array:</p>
+<ul>
+<li>~ means that the array contains only numeric values</li>
+<li>_ means that the array contains only characters</li>
+<li>+ is used for mixed arrays</li>
+<li>∮ means that the array contains other arrays: it is a nested array</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="strings-characters-and-character-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="strings-characters-and-character-vectors">Strings (characters and character vectors)</h2>
+<p>A series of characters creates a character vector whose length is the number of characters in it</p>
+<div class="cell">
+<pre class="apl cell-code"><code>'ACF'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│ACF│
+└───┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍴'ACF'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│3│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>'A' 'C' 'F'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│ACF│
+└───┘
+</pre>
+</div>
+</div>
+<p>A single character is a scalar, and like other scalars has an empty shape.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍴'y'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌⊖┐
+│0│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍴'your boat'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│9│
+└~┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 4 'a'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│1 2 3 4 a│
+└+────────┘
+</pre>
+</div>
+</div>
+<p>Because a series of strings is a vector, putting it in another array creates a nested array.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 4 'ab'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────────┐
+│         ┌→─┐ │
+│ 1 2 3 4 │ab│ │
+│         └──┘ │
+└∊─────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>(1 2)(3 4)'ab'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────────────┐
+│ ┌→──┐ ┌→──┐ ┌→─┐ │
+│ │1 2│ │3 4│ │ab│ │
+│ └~──┘ └~──┘ └──┘ │
+└∊─────────────────┘
+</pre>
+</div>
+</div>
+<p>There is a pre-defined variable that gives all the letters of the alphabet provided for convenience.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕A</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────────────────────┐
+│ABCDEFGHIJKLMNOPQRSTUVWXYZ│
+└──────────────────────────┘
+</pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

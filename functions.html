@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.231">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jeremy Howard">
+<meta name="dcterms.date" content="2022-07-05">
+
+<title>apl-study - First functions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="apl-study - First functions">
+<meta property="og:site-name" content="apl-study">
+<meta name="twitter:title" content="apl-study - First functions">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">apl-study</span>
+    </a>
+  </div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">First functions</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">APL Study Group</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./apl.html" class="sidebar-item-text sidebar-link">Basics</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html" class="sidebar-item-text sidebar-link active">First functions</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./operators.html" class="sidebar-item-text sidebar-link">Operators and axis</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./competition.html" class="sidebar-item-text sidebar-link">APL Competition 2022</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./the_rest.html" class="sidebar-item-text sidebar-link">The rest of the glyphs</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python.html" class="sidebar-item-text sidebar-link">Python equivalents</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#boolean" id="toc-boolean" class="nav-link active" data-scroll-target="#boolean">Boolean</a>
+  <ul class="collapse">
+  <li><a href="#equal-sign" id="toc-equal-sign" class="nav-link" data-scroll-target="#equal-sign"><code>=</code> (Equal sign)</a></li>
+  <li><a href="#not-equal" id="toc-not-equal" class="nav-link" data-scroll-target="#not-equal"><code>≠</code> (Not equal)</a></li>
+  <li><a href="#less-than-sign" id="toc-less-than-sign" class="nav-link" data-scroll-target="#less-than-sign"><code>&lt;</code> (Less than sign)</a></li>
+  <li><a href="#greater-than-sign" id="toc-greater-than-sign" class="nav-link" data-scroll-target="#greater-than-sign"><code>&gt;</code> (Greater than sign)</a></li>
+  <li><a href="#less-than-or-equal-to-sign" id="toc-less-than-or-equal-to-sign" class="nav-link" data-scroll-target="#less-than-or-equal-to-sign"><code>≤</code> (Less than or equal to sign)</a></li>
+  <li><a href="#greater-than-or-equal-to-sign" id="toc-greater-than-or-equal-to-sign" class="nav-link" data-scroll-target="#greater-than-or-equal-to-sign"><code>≥</code> (Greater than or equal to sign)</a></li>
+  <li><a href="#equal-underbar" id="toc-equal-underbar" class="nav-link" data-scroll-target="#equal-underbar"><code>≡</code> (Equal underbar)</a></li>
+  <li><a href="#equal-underbar-slash" id="toc-equal-underbar-slash" class="nav-link" data-scroll-target="#equal-underbar-slash"><code>≢</code> (Equal Underbar Slash)</a></li>
+  <li><a href="#logical-or" id="toc-logical-or" class="nav-link" data-scroll-target="#logical-or"><code>∨</code> (Logical or)</a></li>
+  <li><a href="#logical-nor" id="toc-logical-nor" class="nav-link" data-scroll-target="#logical-nor"><code>⍱</code> (Logical NOR)</a></li>
+  <li><a href="#logical-and" id="toc-logical-and" class="nav-link" data-scroll-target="#logical-and"><code>∧</code> (Logical AND)</a></li>
+  <li><a href="#logical-not" id="toc-logical-not" class="nav-link" data-scroll-target="#logical-not"><code>~</code> (Logical NOT)</a></li>
+  <li><a href="#logical-nand" id="toc-logical-nand" class="nav-link" data-scroll-target="#logical-nand"><code>⍲</code> (Logical NAND)</a></li>
+  <li><a href="#slash" id="toc-slash" class="nav-link" data-scroll-target="#slash"><code>/</code> (Slash)</a></li>
+  </ul></li>
+  <li><a href="#min-max-index-concat" id="toc-min-max-index-concat" class="nav-link" data-scroll-target="#min-max-index-concat">Min, max, index, concat</a>
+  <ul class="collapse">
+  <li><a href="#iota" id="toc-iota" class="nav-link" data-scroll-target="#iota"><code>⍳</code> (iota)</a></li>
+  <li><a href="#iota-underbar" id="toc-iota-underbar" class="nav-link" data-scroll-target="#iota-underbar"><code>⍸</code> (iota underbar)</a></li>
+  <li><a href="#upstile" id="toc-upstile" class="nav-link" data-scroll-target="#upstile"><code>⌈</code> (Upstile)</a></li>
+  <li><a href="#downstile" id="toc-downstile" class="nav-link" data-scroll-target="#downstile"><code>⌊</code> (Downstile)</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fastai/apl-study/tree/master/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">First functions</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Dyalog</div>
+    <div class="quarto-category">APL</div>
+    <div class="quarto-category">Glyphs</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jeremy Howard </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 5, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<div class="cell">
+<pre class="apl cell-code"><code>]box on -style=max -trains=tree -fns=on</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────────────────────────────────┐
+│Was ON -style=max -trains=tree -fns=on│
+└──────────────────────────────────────┘
+</pre>
+</div>
+</div>
+<section id="boolean" class="level2">
+<h2 class="anchored" data-anchor-id="boolean">Boolean</h2>
+<section id="equal-sign" class="level3">
+<h3 class="anchored" data-anchor-id="equal-sign"><code>=</code> (Equal sign)</h3>
+<section id="dyadic-equal-to" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-equal-to">dyadic <code>=</code> (Equal to)</h4>
+<p><code>=</code> is equal and returns a boolean (true/false). 1 means true, 0 means false.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 = 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<p><code>=</code> works elementwise and will broadcast as needed.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 = 1 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│1 0│
+└~──┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 = 1 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│1 1│
+└~──┘
+</pre>
+</div>
+</div>
+<p>We can also compare characters</p>
+<div class="cell">
+<pre class="apl cell-code"><code>'Banana' = 'aaaaaa'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│0 1 0 1 0 1│
+└~──────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>'Banana' = 'a'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│0 1 0 1 0 1│
+└~──────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>'Banana' 'Apple' 'Candy' = 'a'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────────────────────────────┐
+│ ┌→──────────┐ ┌→────────┐ ┌→────────┐ │
+│ │0 1 0 1 0 1│ │0 0 0 0 0│ │0 1 0 0 0│ │
+│ └~──────────┘ └~────────┘ └~────────┘ │
+└∊──────────────────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="not-equal" class="level3">
+<h3 class="anchored" data-anchor-id="not-equal"><code>≠</code> (Not equal)</h3>
+<section id="monadic-unique-mask" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-unique-mask">monadic <code>≠</code> (Unique Mask)</h4>
+<p>Monadic <code>≠</code> returns 1 on the first occurrence of an item in an array.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>≠22 10 22 22 21 10 5 10</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────┐
+│1 1 0 0 1 0 1 0│
+└~──────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>≠ 'Banana'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│1 1 1 0 0 0│
+└~──────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>≠ 'Mississippi'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────────────┐
+│1 1 1 0 0 0 0 0 1 0 0│
+└~────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-not-equal-to" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-not-equal-to">dyadic <code>≠</code> (Not Equal To)</h4>
+<p>Dyadic <code>≠</code> returns true (1) if elements are not equal, and false (0) if elements are equal.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 ≠ 4 2 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 0 1│
+└~────┘
+</pre>
+</div>
+</div>
+<p>The number 7 and the character 7 are not equal.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>7 ≠ '7'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="less-than-sign" class="level3">
+<h3 class="anchored" data-anchor-id="less-than-sign"><code>&lt;</code> (Less than sign)</h3>
+<section id="dyadic-less-than" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-less-than">dyadic <code>&lt;</code> (Less than)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 &lt; 4 2 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 0 0│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 &lt; 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 0 0│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="greater-than-sign" class="level3">
+<h3 class="anchored" data-anchor-id="greater-than-sign"><code>&gt;</code> (Greater than sign)</h3>
+<section id="dyadic-greater-than" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-greater-than">dyadic <code>&gt;</code> (Greater than)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 &gt; 4 2 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│0 0 1│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 &gt; 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│0 0 1│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="less-than-or-equal-to-sign" class="level3">
+<h3 class="anchored" data-anchor-id="less-than-or-equal-to-sign"><code>≤</code> (Less than or equal to sign)</h3>
+<section id="dyadic-less-than-or-equal-to" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-less-than-or-equal-to">dyadic <code>≤</code> (Less than or equal to)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 ≤ 4 2 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 1 0│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 ≤ 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 1 0│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="greater-than-or-equal-to-sign" class="level3">
+<h3 class="anchored" data-anchor-id="greater-than-or-equal-to-sign"><code>≥</code> (Greater than or equal to sign)</h3>
+<section id="dyadic-greater-than-or-equal-to" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-greater-than-or-equal-to">dyadic <code>≥</code> (Greater than or equal to)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 ≥ 4 2 ¯1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│0 1 1│
+└~────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 2 3 ≥ 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│0 1 1│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="equal-underbar" class="level3">
+<h3 class="anchored" data-anchor-id="equal-underbar"><code>≡</code> (Equal underbar)</h3>
+<section id="monadic-depth" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-depth">monadic <code>≡</code> (Depth)</h4>
+<p>Depth shows how nested an array is. A simple scalar is an array with no nesting.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>≡ 7</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+0
+ 
+</pre>
+</div>
+</div>
+<p>An array of simple scalars has depth 1.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>≡ 'abc'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<p>An array that is an array of simple arrays has depth 2.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>(1 2)(3 4)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────┐
+│ ┌→──┐ ┌→──┐ │
+│ │1 2│ │3 4│ │
+│ └~──┘ └~──┘ │
+└∊────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>≡ (1 2)(3 4)</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+2
+ 
+</pre>
+</div>
+</div>
+<p>If the depth is not consistent, then it returns the max depth as a negative number.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>(1 2)(3 4) (5 (6 7))</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────────────────┐
+│ ┌→──┐ ┌→──┐ ┌→────────┐ │
+│ │1 2│ │3 4│ │   ┌→──┐ │ │
+│ └~──┘ └~──┘ │ 5 │6 7│ │ │
+│             │   └~──┘ │ │
+│             └∊────────┘ │
+└∊────────────────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>≡ (1 2)(3 4) (5 (6 7))</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">  
+¯3
+  
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-match" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-match">dyadic <code>≡</code> (Match)</h4>
+<p>Match does a comparison to see if 2 objects are equal. It is similar to <code>=</code>, but it works on entire objects rather than elementwise. In other words it is equal with a wider scope.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 ≡ 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 ≡ 0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+0
+ 
+</pre>
+</div>
+</div>
+<p><code>≡</code> works on whole objects and <strong>not</strong> elementwise with broadcasting.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 ≡ 1 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+0
+ 
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="equal-underbar-slash" class="level3">
+<h3 class="anchored" data-anchor-id="equal-underbar-slash"><code>≢</code> (Equal Underbar Slash)</h3>
+<section id="monadic-tally" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-tally">monadic <code>≢</code> (Tally)</h4>
+<p>Tally counts the major cells in an array. This means it gives the length of the leading axis. For a vector, or rank 1 array, this is the same as it’s shape but as a scalar.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>≢ 1 2 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+3
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍴ 1 2 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│3│
+└~┘
+</pre>
+</div>
+</div>
+<p>If there are multiple dimensions, Tally returns the number of major cells, which is the size of the first dimension</p>
+<div class="cell">
+<pre class="apl cell-code"><code>≢ 2 3 ⍴ ⍳6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+2
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>≢ 3 2 ⍴ ⍳6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+3
+ 
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-not-match" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-not-match">dyadic <code>≢</code> (Not match)</h4>
+<p>Not match does a comparison to see if 2 objects are not equal. It is similar to <code>≠</code>, but it works on entire objects rather than elementwise. In other words, it is equal with a wider scope.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 ≢ 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+0
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>1 ≢ 0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<p><code>≢</code> works on whole objects and <strong>not</strong> elementwise with broadcasting.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 ≢ 1 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="logical-or" class="level3">
+<h3 class="anchored" data-anchor-id="logical-or"><code>∨</code> (Logical or)</h3>
+<section id="dyadic-greatest-common-divisor-or" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-greatest-common-divisor-or">dyadic <code>∨</code> (Greatest Common Divisor (Or))</h4>
+<p>Standard <code>or</code> operator when applied to booleans.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>0 1 0 1 ∨ 0 0 1 1  ⍝ Truth table for *or*</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│0 1 1 1│
+└~──────┘
+</pre>
+</div>
+</div>
+<p>5 is the largest number that divides 15 and 35 cleanly (meaning no remainder). Therefore, 5 is the greatest common divisor of 15 and 35.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>15 1 2 7 ∨ 35 1 4 0  ⍝ GCD</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│5 1 2 7│
+└~──────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="logical-nor" class="level3">
+<h3 class="anchored" data-anchor-id="logical-nor"><code>⍱</code> (Logical NOR)</h3>
+<section id="dyadic-nor" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-nor">dyadic <code>⍱</code> (Nor)</h4>
+<p>For more details on logical nor, <a href="https://en.wikipedia.org/wiki/Logical_NOR#Truth_table">see this page</a></p>
+<div class="cell">
+<pre class="apl cell-code"><code>0 1 0 1 ⍱ 0 0 1 1  ⍝ Truth table for *nor*</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│1 0 0 0│
+└~──────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="logical-and" class="level3">
+<h3 class="anchored" data-anchor-id="logical-and"><code>∧</code> (Logical AND)</h3>
+<section id="dyadic-lowest-common-multiple-and" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-lowest-common-multiple-and">dyadic <code>∧</code> (Lowest Common Multiple (And))</h4>
+<p>Standard <code>and</code> operator when applied to booleans.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>0 1 0 1 ∧ 0 0 1 1  ⍝ Truth table for *and*</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│0 0 0 1│
+└~──────┘
+</pre>
+</div>
+</div>
+<p>105 is the smallest multiple of both 15 and 35, therefore 105 is the lowest common multiple of 15 and 35.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>15 1 2 7 ∧ 35 1 4 0  ⍝ LCM</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│105 1 4 0│
+└~────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="logical-not" class="level3">
+<h3 class="anchored" data-anchor-id="logical-not"><code>~</code> (Logical NOT)</h3>
+<section id="monadic-not" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-not">monadic <code>~</code> (Not)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>~ 0 1  ⍝ Truth table for *not*</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│1 0│
+└~──┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-withoutexcluding" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-withoutexcluding">dyadic <code>~</code> (Without;Excluding)</h4>
+<p>Gives the elements from the left argument that are not in the right.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3 1 4 1 5 ~ 5 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│3 4│
+└~──┘
+</pre>
+</div>
+</div>
+<p>Also works on the character vectors</p>
+<div class="cell">
+<pre class="apl cell-code"><code>'aa' 'bb' 'cc' 'bb'  ~ 'bb' 'xx'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│ ┌→─┐ ┌→─┐ │
+│ │aa│ │cc│ │
+│ └──┘ └──┘ │
+└∊──────────┘
+</pre>
+</div>
+</div>
+<p>Also works on nested arrays</p>
+<div class="cell">
+<pre class="apl cell-code"><code>(1 2) 3 ~ ⊂1 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→┐
+│3│
+└~┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="logical-nand" class="level3">
+<h3 class="anchored" data-anchor-id="logical-nand"><code>⍲</code> (Logical NAND)</h3>
+<section id="dyadic-nand" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-nand">dyadic <code>⍲</code> (Nand)</h4>
+<p>Nand is “Not and”</p>
+<div class="cell">
+<pre class="apl cell-code"><code>0 1 0 1 ⍲ 0 0 1 1  ⍝ Truth table for *nand*</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│1 1 1 0│
+└~──────┘
+</pre>
+</div>
+</div>
+<p>We could use and (<code>^</code>) apply not (<code>~</code>) afterward to get the same result. As you can see it truly is “Not and”</p>
+<div class="cell">
+<pre class="apl cell-code"><code>~ 0 1 0 1 ∧ 0 0 1 1  ⍝ Truth table for *nand*</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│1 1 1 0│
+└~──────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="slash" class="level3">
+<h3 class="anchored" data-anchor-id="slash"><code>/</code> (Slash)</h3>
+<section id="monadic-replicate" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-replicate">monadic <code>/</code> (Replicate)</h4>
+<div class="cell">
+<pre class="apl cell-code"><code>v←22 10 22 22 21 10 5 10
+≠v</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────┐
+│1 1 0 0 1 0 1 0│
+└~──────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>(≠v)/v</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→─────────┐
+│22 10 21 5│
+└~─────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 1 3 1 3 1 / 'Banana'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────────┐
+│BBBannnannna│
+└────────────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="min-max-index-concat" class="level2">
+<h2 class="anchored" data-anchor-id="min-max-index-concat">Min, max, index, concat</h2>
+<section id="iota" class="level3">
+<h3 class="anchored" data-anchor-id="iota"><code>⍳</code> (iota)</h3>
+<section id="monadic-index-generator" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-index-generator">monadic <code>⍳</code> (index generator)</h4>
+<p>Creates index locations for array with specified shape.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍳4</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────┐
+│1 2 3 4│
+└~──────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍳2 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────────┐
+↓ ┌→──┐ ┌→──┐ ┌→──┐ │
+│ │1 1│ │1 2│ │1 3│ │
+│ └~──┘ └~──┘ └~──┘ │
+│ ┌→──┐ ┌→──┐ ┌→──┐ │
+│ │2 1│ │2 2│ │2 3│ │
+│ └~──┘ └~──┘ └~──┘ │
+└∊──────────────────┘
+</pre>
+</div>
+</div>
+<p><code>⍳</code> is often used with <code>⍴</code> to create arrays</p>
+<div class="cell">
+<pre class="apl cell-code"><code>2 3 ⍴ ⍳6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+↓1 2 3│
+│4 5 6│
+└~────┘
+</pre>
+</div>
+</div>
+<p>To generate an array with various patterns you can combine with other functions.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1+2×⍳6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────┐
+│3 5 7 9 11 13│
+└~────────────┘
+</pre>
+</div>
+</div>
+<p>Array of shape 0 is nan empty vector and the index locations of a shape 0 array is and empty vector.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍳0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌⊖┐
+│0│
+└~┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-index-of" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-index-of">dyadic <code>⍳</code> (index of)</h4>
+<p>Provides the index locations for where <code>⍵</code> (right argument) is in <code>⍺</code> (left argument)</p>
+<div class="cell">
+<pre class="apl cell-code"><code>1 3 6 5 4 ⍳ 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+2
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>'ABCDABCDEF' ⍳ 'ACFG'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│1 3 10 11│
+└~────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕←mat←3 2 ⍴ ⍳6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+↓1 2│
+│3 4│
+│5 6│
+└~──┘
+</pre>
+</div>
+</div>
+<p><code>⍳</code> works on major cells, or along the first dimension. The third major cell of mat is <code>5 6</code>.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>mat←3 2 ⍴ ⍳6
+mat ⍳ 5 6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+3
+ 
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="iota-underbar" class="level3">
+<h3 class="anchored" data-anchor-id="iota-underbar"><code>⍸</code> (iota underbar)</h3>
+<section id="monadic-where" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-where">monadic <code>⍸</code> (Where)</h4>
+<p>When applied to a boolean/binary array, where gives index locations of the true values.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍸ 1 0 0 1 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│1 4 5│
+└~────┘
+</pre>
+</div>
+</div>
+<p>When applied to a natural number, where repeats the index locations if the number is greater than 1. For example <code>⍸1 2 3</code> would give <code>1 2 2 3 3 3</code></p>
+<div class="cell">
+<pre class="apl cell-code"><code>⍸1 2 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│1 2 2 3 3 3│
+└~──────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⍸ 2 0 0 2 1</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────┐
+│1 1 4 4 5│
+└~────────┘
+</pre>
+</div>
+</div>
+<p>When applied to a higher rank array it still provides the index locations of the elements, but index locations have multiple values (in this case row and column).</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕←bmat ← 2 3 ⍴ 0 1 0 1 0 1
+⍸ bmat</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+↓0 1 0│
+│1 0 1│
+└~────┘
+</pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────────────┐
+│ ┌→──┐ ┌→──┐ ┌→──┐ │
+│ │1 2│ │2 1│ │2 3│ │
+│ └~──┘ └~──┘ └~──┘ │
+└∊──────────────────┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕←bmat ← 2 3 ⍴ 0 2 0 2 0 2
+⍸ bmat</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+↓0 2 0│
+│2 0 2│
+└~────┘
+</pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────────────────────────────┐
+│ ┌→──┐ ┌→──┐ ┌→──┐ ┌→──┐ ┌→──┐ ┌→──┐ │
+│ │1 2│ │1 2│ │2 1│ │2 1│ │2 3│ │2 3│ │
+│ └~──┘ └~──┘ └~──┘ └~──┘ └~──┘ └~──┘ │
+└∊────────────────────────────────────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-interval-index" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-interval-index">dyadic <code>⍸</code> (Interval Index)</h4>
+<p>Interval index creates intervals and returns an array that tells you which interval a value falls in.</p>
+<p>If the following example, <code>⍵</code> is <code>2 4 6</code>. Therefore the following intervals (sometimes called bins) are created.</p>
+<ul>
+<li><strong>0th interval:</strong> Less than 2</li>
+<li><strong>1st interval:</strong> 2-4 (excluding 4)</li>
+<li><strong>2nd interval:</strong> 4-6 (excluding 6)</li>
+<li><strong>3rd interval:</strong> Greater than or equal to 6</li>
+</ul>
+<p><code>⍺</code> (right argument) is <code>1 2 3 4 5 6 7</code> so let’s put those into intervals, which the first interval starting at 0.</p>
+<ul>
+<li>The first value of <code>⍺</code> is 1. 1 is Less than 2. Therefore it is in the 0th interval and interval index returns 0.</li>
+<li>The second value of <code>⍺</code> is 2. 2 is in the 2-4 range. Therefore it is in the 1st interval and interval index returns 1.</li>
+<li>The third value of <code>⍺</code> is 3. 3 is in the 2-4 range. Therefore it is in the 1st interval and interval index returns 1.</li>
+<li>The fourth value of <code>⍺</code> is 4. 4 is in the 4-6 range. Therefore it is in the 2nd interval and interval index returns 2.</li>
+</ul>
+<p>And so on and so forth.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>2 4 6 ⍸ 1 2 3 4 5 6 7</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────────────┐
+│0 1 1 2 2 3 3│
+└~────────────┘
+</pre>
+</div>
+</div>
+<p>Interval index works the same way with character vectors.</p>
+<ul>
+<li><code>D</code> is in the first interval because it is between <code>A</code> and <code>E</code>.</li>
+<li><code>Y</code> is in the last interval (fifth) because it is larger than all values</li>
+<li><code>A</code> is in the first interval because it is between <code>A</code> and <code>E</code>.</li>
+<li><code>L</code> is in the third interval because it is between <code>I</code> and <code>O</code>.</li>
+</ul>
+<p>etc.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>'AEIOU' ⍸ 'DYALOG'</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──────────┐
+│1 5 1 3 4 2│
+└~──────────┘
+</pre>
+</div>
+</div>
+<p>Interval index works across major cells.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⎕←mat←3 2⍴⍳6</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+↓1 2│
+│3 4│
+│5 6│
+└~──┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>mat ⍸ 3 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+1
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>mat ⍸ 3 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+2
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>mat ⍸ 2 2 ⍴ 3 3 3 5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│1 2│
+└~──┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="upstile" class="level3">
+<h3 class="anchored" data-anchor-id="upstile"><code>⌈</code> (Upstile)</h3>
+<section id="monadic-ceiling" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-ceiling">monadic <code>⌈</code> (Ceiling)</h4>
+<p>Rounds up to nearest whole number.</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⌈ 3.4 ¯3.4 3 0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────┐
+│4 ¯3 3 0│
+└~───────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-maximum" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-maximum">dyadic <code>⌈</code> (Maximum)</h4>
+<p>Takes maximum of 2 values</p>
+<div class="cell">
+<pre class="apl cell-code"><code>3⌈2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+3
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>3 2⌈2 3</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→──┐
+│3 3│
+└~──┘
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>4 ⌈ 6 ⌈ 2</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL"> 
+6
+ 
+</pre>
+</div>
+</div>
+<div class="cell">
+<pre class="apl cell-code"><code>a ← ¯4 6 2
+0 ⌈ a</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→────┐
+│0 6 2│
+└~────┘
+</pre>
+</div>
+</div>
+</section>
+</section>
+<section id="downstile" class="level3">
+<h3 class="anchored" data-anchor-id="downstile"><code>⌊</code> (Downstile)</h3>
+<section id="monadic-floor" class="level4">
+<h4 class="anchored" data-anchor-id="monadic-floor">monadic <code>⌊</code> (Floor)</h4>
+<p>Rounds down to nearest whole number</p>
+<div class="cell">
+<pre class="apl cell-code"><code>⌊ 3.4 ¯3.4 3 0</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">┌→───────┐
+│3 ¯4 3 0│
+└~───────┘
+</pre>
+</div>
+</div>
+</section>
+<section id="dyadic-minimum" class="level4">
+<h4 class="anchored" data-anchor-id="dyadic-minimum">dyadic <code>⌊</code> (Minimum)</h4>
+<p>Takes minimum of 2 values</p>
+<div class="cell">
+<pre class="apl cell-code"><code>4 ⌊ 6 ⌊ 2.5</code></pre>
+<div class="cell-output cell-output-display">
+<pre class="language-APL">   
+2.5
+   
+</pre>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

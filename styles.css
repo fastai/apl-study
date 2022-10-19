@@ -1,0 +1,38 @@
+pre.language-APL {
+  line-height: 1.05;
+}
+
+.cell-output pre {
+  padding: 3px 0px 3px 9px;
+  margin-left: 0.8rem;
+  margin-top: 0;
+  background: none;
+  border-left: 2px solid lightsalmon;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.cell-output .sourceCode {
+  background: none;
+  margin-top: 0;
+}
+
+.cell > .sourceCode {
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: 'sax2';
+  src: url('www/SAX2.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+pre.language-APL {
+    font-family: 'sax2' !important;
+}   
+
+.apl code {
+    font-family: 'sax2' !important;
+}   
+
